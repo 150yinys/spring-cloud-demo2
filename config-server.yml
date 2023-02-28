@@ -3,7 +3,7 @@ server:
 
 security: 
     basic: 
-        enable: true
+        enable: false
     user: 
         name: admin
         password: 123yys 
