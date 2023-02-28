@@ -19,4 +19,4 @@ eureka:
     register-with-eureka: false
     fetch-registry: false
     service-url:
-      defaultZone: http://${security.user.name}:${security.user.password}@${eureka.instance.hostname}:8888/eureka/
+      defaultZone: http://${eureka.instance.hostname}:8888/eureka/
