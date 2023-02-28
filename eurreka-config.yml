@@ -1,20 +1,30 @@
+spring:
+  profiles:
+    active:
+    - dev
+---
 server:
-  port: 8888
-
-security: 
-    basic: 
-        enable: false
-    user: 
-        name: admin
-        password: 123yys 
-
+  port: 2004
+  context-path: /
+spring:
+  profiles: dev
 eureka:
-  server:
-    enable-self-preservation: true
-    renewalPercentThreshold: 0.49
   instance:
     hostname: localhost
-    leaseRenewalIntervalInSeconds: 30
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+---
+server:
+  port: 2005
+  context-path: /
+spring:
+  profiles: test
+eureka:
+  instance:
+    hostname: localhost
   client:
     register-with-eureka: false
     fetch-registry: false
