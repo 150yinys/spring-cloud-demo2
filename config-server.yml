@@ -1,22 +1,4 @@
-server:
-  port: 7001
-
-security: 
-    basic: 
-        enable: false
-    user: 
-        name: admin
-        password: 123yys 
-
-eureka:
-  server:
-    enable-self-preservation: true
-    renewalPercentThreshold: 0.49
-  instance:
-    hostname: localhost
-    leaseRenewalIntervalInSeconds: 30
-  client:
-    register-with-eureka: false
-    fetch-registry: false
-    service-url:
-      defaultZone: http://${eureka.instance.hostname}:8888/eureka/
+port: 9999
+spring:
+  application:
+    name: config-server
